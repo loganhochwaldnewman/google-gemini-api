@@ -2,10 +2,10 @@ import google.generativeai as genai
 from model_settings import safety_settings
 from model_settings import model_name
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 # Load environment variables from the .env file
-load_dotenv()
+load_dotenv(find_dotenv())
 
 # Configure the generative AI model
 genai.configure(api_key=os.environ["API_KEY"])
