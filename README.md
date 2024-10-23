@@ -108,3 +108,19 @@ to have them converse with AI until they indicate that they'd like to stop.
 This has been done for you. Run it and notice what is going on. Add a comment at the bottom of the file describing what you think is happening.
 - Edit the code so that the new window looks completely different. Even if you don't understand the tkinter library, you can still figure out what it is doing.
 - For example, Arial is a font name. If you used a different font name, what do you think would happen?
+
+
+### Issues:
+There was an issue on the rapsberry pis where they could not handle unicode characters in the terminal. This was the fix:
+- Open a pi terminal.
+- Run `nano ~/.bashrc`
+- At the bottom of the file, write:
+  ```
+  # Unicode Encoding Python Terminal
+  export PYTHONIOENCODING=utf-8
+  ```
+- Hit: CTRL + X, Y, Enter
+- In the same terminal, run: `sudo apt-get install fonts-noto-color-emoji`
+- In VSCode, open the settings by hitting: CTRL + ,
+- In the font option, it should be edited to say: 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'Noto Color Emoji'
+- Closing VSCode and re-opening it should now show emojis and not throw errors when trying to print unicode characters.
